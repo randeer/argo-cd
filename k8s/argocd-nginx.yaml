@@ -72,4 +72,3 @@ spec:
   - hosts:
     - k8s.lala-1992.xyz
     secretName: nginx-tls-secret
----
