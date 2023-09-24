@@ -71,5 +71,5 @@ spec:
   tls:
   - hosts:
     - k8s.lala-1992.xyz
-    secretName: nginx-tls-secret
+    secretName: nginx-test-k8s
 ---
