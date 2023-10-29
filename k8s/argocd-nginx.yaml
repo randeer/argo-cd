@@ -30,7 +30,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: randeerdil/circleci-asp-dot-net-core-cv:20231029105440
+        image: randeerdil/circleci-asp-dot-net-core-cv:20231029114636
         ports:
         - containerPort: 80
 ---
