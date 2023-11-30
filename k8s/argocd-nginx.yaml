@@ -43,7 +43,7 @@ spec:
     spec:
       containers:
       - name: pythonwebapp
-        image: randeerdil/wordpressautomation:1.6
+        image: randeerdil/wordpressautomation:1.7
         ports:
         - containerPort: 80
         volumeMounts:
