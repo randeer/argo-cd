@@ -30,7 +30,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: randeerdil/wordpressautomation:1.1
+        image: randeerdil/wordpressautomation:1.2
         ports:
         - containerPort: 80
 ---
