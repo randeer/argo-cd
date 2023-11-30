@@ -11,6 +11,18 @@ spec:
   dnsNames:
     - 'k8s.lala-1992.xyz'
 ---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: userdata
+  namespace: nginx-test
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -33,6 +45,13 @@ spec:
         image: randeerdil/wordpressautomation:1.3
         ports:
         - containerPort: 80
+        volumeMounts:
+        - name: data-volume
+          mountPath: /data  # Mount the volume to the /data directory in the container
+  volumes:
+  - name: data-volume
+    persistentVolumeClaim:
+      claimName: userdata
 ---
 apiVersion: v1
 kind: Service
