@@ -23,6 +23,7 @@ spec:
     requests:
       storage: 10Gi
 ---
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -48,10 +49,12 @@ spec:
         volumeMounts:
         - name: data-volume
           mountPath: /data  # Mount the volume to the /data directory in the container
-  volumes:
-  - name: data-volume
-    persistentVolumeClaim:
-      claimName: userdata
+      volumes:
+      - name: data-volume
+        persistentVolumeClaim:
+          claimName: userdata
+
+
 ---
 apiVersion: v1
 kind: Service
